@@ -1,0 +1,58 @@
+seed: 42
+device: cuda
+
+data:
+  source: lerobot  # lerobot | hdf5
+  suite: libero_object
+  lerobot_path: /home/lxg/ai_models/miniwam/data/libero_object
+  hdf5_root: null  # e.g. /path/to/LIBERO/datasets
+  task_indices: null  # null = all tasks in suite
+  image_size: 128
+  use_wrist: false
+  concat_cameras: true
+  action_horizon: 16
+  video_frames: 5
+  video_stride: 4
+  num_workers: 4
+  train_ratio: 0.95
+
+model:
+  # stabilityai/sd-vae-ft-mse for production; mock = offline SimpleConvVAE
+  vae_id: stabilityai/sd-vae-ft-mse
+  text_encoder: clip  # clip | none
+  clip_model: openai/clip-vit-base-patch32
+  hidden_dim: 512
+  num_layers: 8
+  num_heads: 8
+  mlp_ratio: 4.0
+  patch_size: 2
+  action_dim: 7
+  dropout: 0.1
+  num_inference_steps: 10
+  lambda_vid: 1.0
+  train_video: true
+  train_action: true
+
+training:
+  mode: full  # full | video_only | action_only
+  batch_size: 4
+  gradient_accumulation: 2
+  max_steps: 20000
+  learning_rate: 1.0e-4
+  weight_decay: 0.01
+  warmup_steps: 500
+  grad_clip: 1.0
+  bf16: true
+  log_every: 50
+  save_every: 2000
+  eval_every: 2000
+  save_dir: ./checkpoints/mini_wam
+  log_dir: ./logs/mini_wam
+
+eval:
+  ws_url: ws://127.0.0.1:8765
+  suite: libero_object
+  task_id: 6
+  num_trials: 10
+  max_steps: 600
+  chunk_execute: 8

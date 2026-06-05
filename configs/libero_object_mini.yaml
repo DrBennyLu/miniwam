@@ -1,0 +1,27 @@
+# Single-task fast iteration (task_index=6)
+defaults:
+  - default
+
+data:
+  task_indices: [2]
+  image_size: 128
+  use_wrist: false
+  action_horizon: 10
+  video_frames: 5
+
+model:
+  hidden_dim: 384
+  num_layers: 6
+  num_heads: 6
+  lambda_vid: 1.0
+
+training:
+  batch_size: 4
+  max_steps: 2000
+  save_every: 500
+  log_every: 20
+  save_dir: ./checkpoints/libero_object_mini
+
+eval:
+  task_id: 6
+  num_trials: 5

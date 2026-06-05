@@ -1,0 +1,13 @@
+defaults:
+  - default
+
+data:
+  task_indices: null
+  use_wrist: true
+
+training:
+  max_steps: 20000
+  save_dir: ./checkpoints/libero_object_suite
+
+eval:
+  num_trials: 50

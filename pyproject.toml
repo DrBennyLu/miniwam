@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "miniwam"
+version = "0.1.0"
+description = "Lightweight Fast-WAM-style World Action Model for LIBERO"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.1.0",
+    "torchvision>=0.16.0",
+    "numpy>=1.24.0",
+    "pillow>=9.0.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.65.0",
+    "einops>=0.7.0",
+    "diffusers>=0.27.0",
+    "transformers>=4.38.0",
+    "accelerate>=0.27.0",
+    "h5py>=3.8.0",
+    "opencv-python>=4.8.0",
+    "tensorboard>=2.14.0",
+    "websockets>=12.0",
+    "pyarrow>=14.0.0",
+    "pandas>=2.0.0",
+]
+
+[project.optional-dependencies]
+lerobot = ["lerobot==0.3.3"]
+
+[project.scripts]
+miniwam-train = "miniwam.train:main"
+miniwam-smoke-vae = "miniwam.scripts.smoke_vae:main"
+miniwam-eval = "miniwam.eval.libero_ws_eval:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["miniwam*"]

@@ -1,0 +1,10 @@
+# Phase 1: video latent prediction only
+defaults:
+  - libero_object_suite
+
+model:
+  train_action: false
+
+training:
+  mode: video_only
+  save_dir: ./checkpoints/libero_object_video_only

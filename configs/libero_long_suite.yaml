@@ -1,0 +1,13 @@
+defaults:
+  - default
+
+data:
+  suite: libero_10
+  task_indices: null
+
+training:
+  max_steps: 20000
+  save_dir: ./checkpoints/libero_long_suite
+
+eval:
+  suite: libero_10

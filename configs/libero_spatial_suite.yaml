@@ -1,0 +1,14 @@
+defaults:
+  - default
+
+data:
+  suite: libero_spatial
+  task_indices: null
+  hdf5_root: null
+
+training:
+  max_steps: 20000
+  save_dir: ./checkpoints/libero_spatial_suite
+
+eval:
+  suite: libero_spatial

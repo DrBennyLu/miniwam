@@ -1,0 +1,14 @@
+# Offline / CI smoke (mock VAE, CPU, few steps)
+defaults:
+  - libero_object_mini
+
+model:
+  vae_id: mock
+  text_encoder: none
+
+training:
+  batch_size: 2
+  max_steps: 30
+  bf16: false
+  device: cpu
+  save_dir: ./checkpoints/libero_object_mini_smoke

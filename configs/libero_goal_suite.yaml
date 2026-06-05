@@ -1,0 +1,13 @@
+defaults:
+  - default
+
+data:
+  suite: libero_goal
+  task_indices: null
+
+training:
+  max_steps: 20000
+  save_dir: ./checkpoints/libero_goal_suite
+
+eval:
+  suite: libero_goal

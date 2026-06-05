@@ -1,0 +1,13 @@
+defaults:
+  - libero_object_no_video
+
+model:
+  vae_id: mock
+  text_encoder: none
+
+training:
+  batch_size: 2
+  max_steps: 20
+  device: cpu
+  bf16: false
+  save_dir: ./checkpoints/libero_object_no_video_smoke

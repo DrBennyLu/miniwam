@@ -1,0 +1,11 @@
+# Ablation: w/o video co-training (lambda_vid = 0)
+defaults:
+  - libero_object_suite
+
+model:
+  lambda_vid: 0.0
+  train_video: false
+
+training:
+  mode: action_only
+  save_dir: ./checkpoints/libero_object_no_video
