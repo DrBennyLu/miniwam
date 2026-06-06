@@ -53,6 +53,26 @@ python -m miniwam.eval.libero_ws_eval --config configs/libero_object_mini.yaml \
   --checkpoint checkpoints/mini_wam/latest.pt
 ```
 
+# train the network
+```bash
+python -m miniwam.train --config configs/libero_object_task2_large.yaml
+```
+
+# see the image generation result
+```bash
+python scripts/viz_video_pred.py \
+  --config configs/libero_object_task2_20k.yaml \
+  --checkpoint checkpoints/libero_object_task2_20k/latest.pt \
+  --out-dir outputs/viz_video_pred/step20000
+```
+
+# Close loop eval
+```bash
+python -m miniwam.eval.libero_ws_eval \
+  --config configs/libero_object_task2_large.yaml \
+  --checkpoint checkpoints/libero_object_task2_large/latest.pt
+```
+
 ## Configs
 
 | Config | Purpose |

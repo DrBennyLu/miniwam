@@ -1,0 +1,10 @@
+# task 2 单 task 20k 全量训练（D2 无 NaN 后 --resume 到此配置或直接改 max_steps）
+defaults:
+  - libero_object_mini
+
+training:
+  max_steps: 20000
+  save_every: 2000
+  log_every: 50
+  save_dir: ./checkpoints/libero_object_task2_20k
+  log_dir: ./logs/libero_object_task2_20k

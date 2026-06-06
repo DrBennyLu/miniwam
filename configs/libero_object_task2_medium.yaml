@@ -1,0 +1,17 @@
+# task2 中等规模：~27M 参数，优先增大 batch（5090 推荐起步档）
+defaults:
+  - libero_object_mini
+
+model:
+  hidden_dim: 512
+  num_layers: 8
+  num_heads: 8
+
+training:
+  batch_size: 16
+  gradient_accumulation: 1   # 有效 batch=16
+  max_steps: 200000
+  save_every: 50000
+  log_every: 50
+  save_dir: ./checkpoints/libero_object_task2_medium
+  log_dir: ./logs/libero_object_task2_medium

@@ -1,0 +1,14 @@
+# Week2 D3-D7: video-only on single task, 2000 steps
+defaults:
+  - libero_object_mini
+
+model:
+  train_action: false
+
+training:
+  mode: video_only
+  max_steps: 2000
+  save_every: 500
+  log_every: 20
+  log_dir: ./logs/libero_object_video_only_mini
+  save_dir: ./checkpoints/libero_object_video_only_mini
