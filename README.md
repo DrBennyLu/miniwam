@@ -1,6 +1,9 @@
 # MiniWAM
 
-Lightweight **Fast-WAM**-style World Action Model for LIBERO, designed for a single RTX 5090 (32GB).
+## Author： Benny Lu
+
+Lightweight **Fast-WAM**-style World Action Model for LIBERO, designed for a single RTX GPU player.
+
 
 - **Training**: joint flow matching on actions + future video latents (`L = L_act + λ L_vid`)
 - **Inference**: single-pass world encoding from the current frame (no future video denoising)
