@@ -15,9 +15,6 @@ Lightweight **Fast-WAM**-style World Action Model for LIBERO, designed for a sin
 cd /home/lxg/ai_models/miniwam
 python -m venv .venv && source .venv/bin/activate
 pip install -e .
-# Or reuse ScriptedVLA env:
-# export PYTHONPATH=/home/lxg/ai_models/miniwam
-# /home/lxg/ai_models/ScriptedVLA/.venv/bin/python -m miniwam.train ...
 ```
 
 Download frozen VAE + CLIP once (5090 training):
@@ -33,7 +30,7 @@ LIBERO simulation (separate env):
 
 ```bash
 conda activate libero
-cd /home/lxg/ai_models/LIBERO
+cd /PATH_TO_YOUR_LIBERO/LIBERO
 python scripts/libero_ws_server.py --suite libero_object
 ```
 
